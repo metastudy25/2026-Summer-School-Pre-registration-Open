@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a">
+<title>2026 이든 썸머스쿨 사전등록 안내</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css">
+<style>
+  :root{
+    --bg:#0a0e1a;
+    --card-bg:rgba(255,255,255,0.035);
+    --card-border:rgba(214,178,110,0.16);
+    --card-border-strong:rgba(214,178,110,0.32);
+    --gold:#cda35d;
+    --gold-bright:#ecd29a;
+    --text:#ffffff;
+    --text-muted:#99a2b8;
+    --text-faint:#666f88;
+    --radius:20px;
+    --radius-sm:14px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:
+      radial-gradient(circle at 18% -8%, rgba(205,163,93,0.10), transparent 38%),
+      radial-gradient(circle at 85% 105%, rgba(90,120,200,0.07), transparent 42%),
+      var(--bg);
+    color:var(--text);
+    font-family:'Pretendard Variable','Pretendard','Noto Sans KR',-apple-system,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+
+  .page{
+    max-width:600px;
+    margin:0 auto;
+    padding:52px 20px 64px;
+  }
+
+  /* ---- entrance animation ---- */
+  .page > *{
+    animation:fadeUp 0.6s ease both;
+  }
+  .page > *:nth-child(1){animation-delay:0s;}
+  .page > *:nth-child(2){animation-delay:0.08s;}
+  .page > *:nth-child(3){animation-delay:0.16s;}
+  .page > *:nth-child(4){animation-delay:0.24s;}
+  .page > *:nth-child(5){animation-delay:0.32s;}
+  .page > *:nth-child(6){animation-delay:0.40s;}
+  .page > *:nth-child(7){animation-delay:0.48s;}
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(14px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .page > *{animation:none;}
+  }
+
+  /* ---- hero ---- */
+  .hero{
+    text-align:center;
+    padding-bottom:36px;
+  }
+  .eyebrow{
+    font-size:0.74rem;
+    letter-spacing:0.24em;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-family:'Noto Serif KR',serif;
+    font-weight:900;
+    font-size:clamp(2.1rem, 9vw, 2.9rem);
+    letter-spacing:-0.01em;
+    margin-bottom:8px;
+  }
+  .hero-sub{
+    font-family:'Noto Serif KR',serif;
+    font-weight:500;
+    font-size:1.15rem;
+    color:var(--gold-bright);
+    letter-spacing:0.08em;
+  }
+  .divider{
+    width:56px; height:2px; margin:24px auto;
+    background:linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .greeting{
+    color:var(--text-muted);
+    font-size:0.95rem;
+    line-height:1.95;
+  }
+
+  /* ---- manifesto (강조 메시지) ---- */
+  .manifesto{
+    position:relative;
+    text-align:center;
+    padding:0 12px 36px;
+  }
+  .quote-mark{
+    font-family:'Noto Serif KR',serif;
+    font-weight:900;
+    font-size:3.4rem;
+    color:var(--card-border-strong);
+    line-height:1;
+    display:block;
+    margin-bottom:-10px;
+  }
+  .manifesto-line{
+    font-family:'Noto Serif KR',serif;
+    font-size:1.08rem;
+    line-height:1.9;
+    font-weight:500;
+  }
+  .manifesto-line.dim{
+    color:var(--text-faint);
+    font-size:0.95rem;
+    font-weight:400;
+    margin-bottom:8px;
+  }
+
+  /* ---- generic card ---- */
+  .card{
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius:var(--radius);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    padding:26px 24px;
+    margin-bottom:18px;
+  }
+  .section-title{
+    font-family:'Noto Serif KR',serif;
+    font-size:1.18rem;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .mark{
+    width:8px; height:8px;
+    background:var(--gold);
+    border-radius:2px;
+    transform:rotate(45deg);
+    flex-shrink:0;
+  }
+  .body-text{
+    font-size:0.93rem;
+    color:var(--text);
+    margin-bottom:14px;
+  }
+  .note{
+    font-size:0.85rem;
+    color:var(--text-faint);
+    margin-top:14px;
+    border-top:1px dashed var(--card-border);
+    padding-top:14px;
+    line-height:1.8;
+  }
+
+  /* ---- info grid (운영기간 / 등원시간) ---- */
+  .info-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:18px;
+  }
+  .mini{
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius:var(--radius-sm);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    padding:20px 16px;
+    text-align:center;
+  }
+  .mini .card-label{
+    font-size:0.76rem;
+    color:var(--text-muted);
+    letter-spacing:0.04em;
+    margin-bottom:10px;
+  }
+  .mini .card-value{
+    font-family:'Noto Serif KR',serif;
+    font-size:1.2rem;
+    font-weight:700;
+    color:var(--gold-bright);
+    margin-bottom:6px;
+  }
+  .mini .card-note{
+    font-size:0.78rem;
+    color:var(--text-faint);
+  }
+
+  /* ---- 설명회 date cards ---- */
+  .date-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:8px;
+  }
+  .date-card{
+    border:1px solid var(--card-border-strong);
+    border-radius:var(--radius-sm);
+    padding:18px 10px;
+    text-align:center;
+  }
+  .dday{
+    display:inline-block;
+    font-size:0.7rem;
+    font-weight:700;
+    color:var(--gold);
+    border:1px solid var(--card-border-strong);
+    border-radius:999px;
+    padding:3px 10px;
+    margin-bottom:10px;
+    letter-spacing:0.05em;
+  }
+  .date-main{
+    font-family:'Noto Serif KR',serif;
+    font-size:1.35rem;
+    font-weight:800;
+    margin-bottom:4px;
+  }
+  .date-sub{
+    font-size:0.8rem;
+    color:var(--text-muted);
+  }
+  .date-caption{
+    text-align:center;
+    font-size:0.82rem;
+    color:var(--text-faint);
+    margin-bottom:18px;
+  }
+
+  /* ---- 위치 ---- */
+  .location{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    text-decoration:none;
+    color:inherit;
+    margin-bottom:16px;
+  }
+  .location svg{flex-shrink:0; margin-top:3px; color:var(--gold);}
+  .loc-name{font-weight:700; margin-bottom:2px;}
+  .loc-addr{font-size:0.85rem; color:var(--text-muted);}
+
+  /* ---- 등록비 ---- */
+  .fee{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    background:rgba(205,163,93,0.07);
+    border:1px solid var(--card-border-strong);
+    border-radius:var(--radius-sm);
+    padding:18px 22px;
+    margin-bottom:18px;
+  }
+  .fee-label{font-size:0.9rem; color:var(--text-muted);}
+  .fee-amount{
+    font-family:'Noto Serif KR',serif;
+    font-size:2rem;
+    font-weight:900;
+    color:var(--gold-bright);
+  }
+  .fee-unit{font-size:1rem; font-weight:500; margin-left:2px;}
+
+  /* ---- 결제 방법 ---- */
+  .pay-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+  .pay-card{
+    border:1px solid var(--card-border);
+    border-radius:var(--radius-sm);
+    padding:18px 16px;
+    display:flex;
+    flex-direction:column;
+  }
+  .pay-num{
+    font-size:0.72rem;
+    color:var(--gold);
+    letter-spacing:0.12em;
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .pay-title{font-weight:700; margin-bottom:10px;}
+  .pay-detail{
+    font-size:0.85rem;
+    color:var(--text-muted);
+    line-height:1.75;
+    margin-bottom:14px;
+    flex-grow:1;
+  }
+  .account{color:var(--gold-bright); font-weight:700; letter-spacing:0.02em;}
+  .copy-btn{
+    width:100%;
+    background:transparent;
+    border:1px solid var(--gold);
+    color:var(--gold-bright);
+    border-radius:999px;
+    padding:9px 0;
+    font-size:0.8rem;
+    font-weight:600;
+    font-family:inherit;
+    cursor:pointer;
+    transition:background 0.2s, color 0.2s;
+  }
+  .copy-btn:hover{background:var(--gold); color:#0a0e1a;}
+  .copy-btn.copied{background:var(--gold); color:#0a0e1a;}
+  .copy-btn:focus-visible{outline:2px solid var(--gold-bright); outline-offset:2px;}
+
+  @media (max-width:480px){
+    .pay-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---- 강조 텍스트 & 박스 ---- */
+  .highlight-text{color:var(--gold-bright); font-weight:700;}
+  .highlight-box{
+    background:rgba(205,163,93,0.08);
+    border:1px solid var(--card-border-strong);
+    border-radius:10px;
+    padding:12px 16px;
+    margin-top:14px;
+    color:var(--gold-bright);
+    font-weight:600;
+    font-size:0.88rem;
+    line-height:1.75;
+  }
+
+  /* ---- footer ---- */
+  .footer{
+    text-align:center;
+    padding-top:22px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+  }
+  .contact-row{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:var(--text-muted);
+    text-decoration:none;
+    font-size:0.92rem;
+    transition:color 0.2s;
+  }
+  .contact-row svg{color:var(--gold);}
+  .contact-row:hover{color:var(--gold-bright);}
+  .contact-row:focus-visible{outline:2px solid var(--gold-bright); outline-offset:4px; border-radius:4px;}
+  .thanks{margin-top:12px; font-size:0.9rem; color:var(--text-faint);}
+  .signature{
+    font-family:'Noto Serif KR',serif;
+    font-weight:700;
+    font-size:1.05rem;
+    color:var(--gold-bright);
+    letter-spacing:0.05em;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <p class="eyebrow">EDEN MANAGED LEARNING CENTER</p>
+    <h1>2026 이든 썸머스쿨</h1>
+    <p class="hero-sub">사전등록 안내</p>
+    <div class="divider"></div>
+    <p class="greeting">
+      안녕하세요, 이든관리형학습센터입니다.<br>
+      2026 썸머스쿨에 관심을 가지고 문의해 주셔서 감사합니다.<br>
+      문의해 주신 학부모님들을 대상으로 등록 절차를 안내드립니다.
+    </p>
+  </header>
+
+  <section class="manifesto">
+    <span class="quote-mark">“</span>
+    <p class="manifesto-line dim">"내일부터 해야지"라는 다짐은 폭염 앞에 무너집니다.</p>
+    <p class="manifesto-line">
+      유혹을 차단하는 완벽한 <span class="highlight-text">디지털 디톡스</span>와
+      <span class="highlight-text">독한 관리</span>로<br>진짜 공부 습관을 만들어 내겠습니다.
+    </p>
+  </section>
+
+  <section class="info-grid">
+    <div class="mini">
+      <p class="card-label">운영 기간</p>
+      <p class="card-value">학교 방학 시작일부터</p>
+      <p class="card-note">학교별 방학 일정에 따라 개별 시작됩니다</p>
+    </div>
+    <div class="mini">
+      <p class="card-label">등원 가능 시간</p>
+      <p class="card-value">08:00 – 22:00</p>
+      <p class="card-note">자율 등·하원</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title"><span class="mark"></span>프로그램 설명회</h2>
+    <div class="date-grid">
+      <div class="date-card">
+        <span class="dday" data-date="2026-06-20">D-5</span>
+        <p class="date-main">6월 20일</p>
+        <p class="date-sub">토요일 · 오전 10:30</p>
+      </div>
+      <div class="date-card">
+        <span class="dday" data-date="2026-06-27">D-12</span>
+        <p class="date-main">6월 27일</p>
+        <p class="date-sub">토요일 · 오전 10:30</p>
+      </div>
+    </div>
+    <p class="date-caption">두 일정 중 편하신 날짜에 참석해 주세요</p>
+
+    <p class="body-text">설명회 참석 후 현장에서 상담과 등록을 함께 진행해 드립니다.</p>
+
+    <a class="location" href="https://map.kakao.com/?q=미사강변대로 80 그린프라자" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      <span>
+        <span class="loc-name">이든관리형학습센터</span><br>
+        <span class="loc-addr">미사강변대로 80 그린프라자 7층</span>
+      </span>
+    </a>
+
+    <p class="note">참석 가능 여부를 미리 알려 주시면 자리를 준비해 두겠습니다.</p>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title"><span class="mark"></span>사전 등록비 및 결제 방법</h2>
+
+    <div class="fee">
+      <span class="fee-label">사전 등록비</span>
+      <span class="fee-amount">200,000<span class="fee-unit">원</span></span>
+    </div>
+
+    <p class="body-text">아래 두 가지 방법 중 편하신 방법으로 납부해 주세요.</p>
+
+    <div class="pay-grid">
+      <div class="pay-card">
+        <p class="pay-num">방법 1</p>
+        <p class="pay-title">계좌이체</p>
+        <p class="pay-detail">
+          신한은행<br>
+          <span class="account">110-481-055771</span><br>
+          예금주 황붕주
+        </p>
+        <button class="copy-btn" onclick="copyAccount(this)">계좌번호 복사</button>
+      </div>
+      <div class="pay-card">
+        <p class="pay-num">방법 2</p>
+        <p class="pay-title">등록앱 내 결제</p>
+        <p class="pay-detail">
+          등록 전용 어플을<br>
+          카카오 알림톡으로<br>
+          개별 발송해 드립니다
+        </p>
+      </div>
+    </div>
+
+    <p class="note">계좌이체로 입금하신 경우, 입금 후 꼭 연락 주시기 바랍니다.</p>
+    <p class="highlight-box">사전등록은 정원 마감 시 조기 종료될 수 있으니 빠른 신청을 권장드립니다.</p>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title"><span class="mark"></span>환불 규정</h2>
+    <p class="body-text">개강 1주일 전까지 취소 시, 사전 등록비 <span class="highlight-text">100% 전액 환불</span> 가능합니다.</p>
+  </section>
+
+  <footer class="footer">
+    <a class="contact-row" href="tel:01084422817">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      010-8442-2817
+    </a>
+    <a class="contact-row" href="https://map.kakao.com/?q=미사강변대로 80 그린프라자" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      미사강변대로 80 그린프라자 7층
+    </a>
+    <p class="thanks">감사합니다.</p>
+    <p class="signature">이든관리형학습센터</p>
+  </footer>
+
+</div>
+
+<script>
+  // D-day 자동 계산
+  document.querySelectorAll('.dday').forEach(function(el){
+    var target = new Date(el.dataset.date + 'T00:00:00');
+    var today = new Date();
+    today.setHours(0,0,0,0);
+    var diff = Math.round((target - today) / 86400000);
+    if (diff > 0) el.textContent = 'D-' + diff;
+    else if (diff === 0) el.textContent = 'D-DAY';
+    else el.textContent = '종료';
+  });
+
+  // 계좌번호 복사
+  function copyAccount(btn){
+    var text = '110-481-055771';
+    var original = btn.textContent;
+    function done(){
+      btn.textContent = '복사 완료';
+      btn.classList.add('copied');
+      setTimeout(function(){
+        btn.textContent = original;
+        btn.classList.remove('copied');
+      }, 1600);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(function(){ fallbackCopy(text, done); });
+    } else {
+      fallbackCopy(text, done);
+    }
+  }
+  function fallbackCopy(text, cb){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch(e) {}
+    document.body.removeChild(ta);
+    cb();
+  }
+</script>
+</body>
+</html>
